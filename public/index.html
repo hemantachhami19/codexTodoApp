@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Todo App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Todo</h1>
+      <p class="sub">Simple Node.js + HTML/CSS app (data saved to a local JSON file)</p>
+    </header>
+
+    <section class="card">
+      <form id="todoForm" class="form">
+        <input id="todoInput" type="text" placeholder="Add a task…" autocomplete="off" />
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="tablist" aria-label="Filters">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="active" type="button">Active</button>
+          <button class="filter" data-filter="done" type="button">Done</button>
+        </div>
+        <div class="stats" id="stats">0 items</div>
+      </div>
+
+      <ul id="todoList" class="list" aria-label="Todo list"></ul>
+
+      <footer class="footer">
+        <small>Tip: click a task to toggle done • press Enter to add</small>
+      </footer>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
