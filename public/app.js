@@ -3,13 +3,16 @@ const els = {
   input: document.getElementById("todoInput"),
   list: document.getElementById("todoList"),
   stats: document.getElementById("stats"),
-  filterBtns: Array.from(document.querySelectorAll(".filter"))
+  filterBtns: Array.from(document.querySelectorAll(".filter")),
+  themeToggle: document.getElementById("themeToggle")
 };
 
 let state = {
   todos: [],
   filter: "all" // all | active | done
 };
+
+const THEME_KEY = "todo_theme";
 
 function escapeHtml(str) {
   return str
@@ -83,6 +86,31 @@ function render() {
   });
 }
 
+function setTheme(theme) {
+  const root = document.documentElement;
+  root.setAttribute("data-theme", theme);
+  localStorage.setItem(THEME_KEY, theme);
+
+  if (els.themeToggle) {
+    const isDark = theme === "dark";
+    els.themeToggle.setAttribute("aria-pressed", String(isDark));
+    const icon = els.themeToggle.querySelector(".themeIcon");
+    const text = els.themeToggle.querySelector(".themeText");
+    if (icon) icon.textContent = isDark ? "◑" : "◐";
+    if (text) text.textContent = isDark ? "Dark" : "Light";
+  }
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "light" || saved === "dark") {
+    setTheme(saved);
+    return;
+  }
+  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
+  setTheme(prefersDark ? "dark" : "light");
+}
+
 els.form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const text = els.input.value.trim();
@@ -128,7 +156,15 @@ els.filterBtns.forEach(btn => {
   });
 });
 
+if (els.themeToggle) {
+  els.themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    setTheme(current === "dark" ? "light" : "dark");
+  });
+}
+
 (async function init() {
+  initTheme();
   await apiGetTodos();
   render();
   els.input.focus();

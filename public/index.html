@@ -4,12 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Todo App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="container">
     <header class="header">
-      <h1>Todo</h1>
+      <div class="titleRow">
+        <h1>Todo</h1>
+        <button id="themeToggle" class="themeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+          <span class="themeIcon" aria-hidden="true">◐</span>
+          <span class="themeText">Light</span>
+        </button>
+      </div>
       <p class="sub">Simple Node.js + HTML/CSS app (data saved to a local JSON file)</p>
     </header>
 
