@@ -1,29 +1,29 @@
 :root {
-  --bg: #f6efe4;
-  --ink: #1f1a17;
-  --muted: #6c5f56;
-  --card: #fff7ec;
-  --accent: #1f6f5c;
-  --accent-2: #ff7a59;
-  --border: rgba(31, 26, 23, 0.12);
-  --shadow: 0 20px 40px rgba(31, 26, 23, 0.18);
-  --input-bg: #fffaf3;
-  --list-bg: #fffdf8;
-  --filter-bg: rgba(31, 26, 23, 0.06);
+  --bg: #faefe8;
+  --ink: #2a1210;
+  --muted: #7a4f49;
+  --card: #fff5f0;
+  --accent: #b03a2e;
+  --accent-2: #ef6a5b;
+  --border: rgba(42, 18, 16, 0.12);
+  --shadow: 0 20px 40px rgba(42, 18, 16, 0.18);
+  --input-bg: #fff7f2;
+  --list-bg: #fffbf8;
+  --filter-bg: rgba(42, 18, 16, 0.06);
   --radius: 18px;
 }
 html[data-theme="dark"] {
-  --bg: #0d1117;
-  --ink: #f1e8dc;
-  --muted: #b7aa9c;
-  --card: #131a24;
-  --accent: #8ee4c1;
-  --accent-2: #ff9a7c;
-  --border: rgba(241, 232, 220, 0.14);
+  --bg: #140a0a;
+  --ink: #f4dfda;
+  --muted: #c9a7a0;
+  --card: #1b0f10;
+  --accent: #f27b6a;
+  --accent-2: #ff9885;
+  --border: rgba(244, 223, 218, 0.14);
   --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-  --input-bg: #0f1620;
-  --list-bg: #111926;
-  --filter-bg: rgba(241, 232, 220, 0.08);
+  --input-bg: #1f1214;
+  --list-bg: #1a1011;
+  --filter-bg: rgba(244, 223, 218, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -33,9 +33,9 @@ body {
   font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color: var(--ink);
   background:
-    radial-gradient(900px 600px at 15% -10%, rgba(31, 111, 92, 0.25), transparent 60%),
-    radial-gradient(800px 500px at 90% 15%, rgba(255, 122, 89, 0.22), transparent 55%),
-    linear-gradient(160deg, #fdf6ea 0%, #f4ead8 60%, #efe4d2 100%);
+    radial-gradient(900px 600px at 15% -10%, rgba(176, 58, 46, 0.24), transparent 60%),
+    radial-gradient(800px 500px at 90% 15%, rgba(239, 106, 91, 0.2), transparent 55%),
+    linear-gradient(160deg, #fff2ec 0%, #f9e0d8 60%, #f2d1c7 100%);
   display: grid;
   place-items: center;
   padding: 28px;
@@ -95,15 +95,15 @@ input {
 }
 input::placeholder { color: rgba(31, 26, 23, 0.45); }
 input:focus {
-  border-color: rgba(31, 111, 92, 0.5);
-  box-shadow: 0 0 0 3px rgba(31, 111, 92, 0.18);
+  border-color: rgba(176, 58, 46, 0.5);
+  box-shadow: 0 0 0 3px rgba(176, 58, 46, 0.18);
 }
 
 button {
   padding: 12px 14px;
   border-radius: 12px;
-  border: 1px solid rgba(31, 111, 92, 0.4);
-  background: linear-gradient(135deg, #1f6f5c 0%, #2b8a72 60%, #34a88a 100%);
+  border: 1px solid rgba(176, 58, 46, 0.4);
+  background: linear-gradient(135deg, #b03a2e 0%, #c44a3a 60%, #d65a4a 100%);
   color: #fffaf3;
   cursor: pointer;
   font-weight: 600;
@@ -112,7 +112,7 @@ button {
 }
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(31, 111, 92, 0.24);
+  box-shadow: 0 8px 18px rgba(176, 58, 46, 0.24);
   filter: saturate(1.05);
 }
 
@@ -135,8 +135,8 @@ button:hover {
   color: var(--ink);
 }
 .filter.active {
-  background: rgba(31, 111, 92, 0.18);
-  border-color: rgba(31, 111, 92, 0.4);
+  background: rgba(176, 58, 46, 0.18);
+  border-color: rgba(176, 58, 46, 0.4);
 }
 
 .stats { color: var(--muted); font-size: 13px; }
@@ -159,7 +159,7 @@ button:hover {
   border-radius: 14px;
   background: var(--list-bg);
   box-shadow: 0 6px 18px rgba(31, 26, 23, 0.08);
-  border-left: 4px solid rgba(255, 122, 89, 0.7);
+  border-left: 4px solid rgba(239, 106, 91, 0.7);
   animation: itemIn 420ms ease both;
 }
 .item:nth-child(1) { animation-delay: 40ms; }
@@ -226,9 +226,9 @@ button:hover {
 /* Dark theme background overrides */
 html[data-theme="dark"] body {
   background:
-    radial-gradient(900px 600px at 20% -10%, rgba(142, 228, 193, 0.18), transparent 60%),
-    radial-gradient(800px 500px at 85% 10%, rgba(255, 154, 124, 0.16), transparent 55%),
-    linear-gradient(160deg, #0d1117 0%, #0b121b 60%, #0a1018 100%);
+    radial-gradient(900px 600px at 20% -10%, rgba(242, 123, 106, 0.18), transparent 60%),
+    radial-gradient(800px 500px at 85% 10%, rgba(255, 152, 133, 0.16), transparent 55%),
+    linear-gradient(160deg, #140a0a 0%, #12090a 60%, #0f0708 100%);
 }
 
 .themeToggle {
