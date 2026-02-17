@@ -1,4 +1,4 @@
-# Simple Todo App (Node.js + HTML/CSS)
+# TaskNest — Smart Todo App (Node.js + HTML/CSS)
 
 ## Requirements
 - Node.js 18+ recommended (works on Node 16+)
