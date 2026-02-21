@@ -115,6 +115,30 @@ button:hover {
   box-shadow: 0 8px 18px rgba(176, 58, 46, 0.24);
   filter: saturate(1.05);
 }
+button:active {
+  transform: translateY(0);
+}
+
+.addBtn {
+  border-color: rgba(176, 58, 46, 0.55);
+  background: linear-gradient(180deg, #d65a4a 0%, #c4493a 55%, #b03a2e 100%);
+  box-shadow:
+    0 6px 0 rgba(128, 33, 24, 0.9),
+    0 14px 26px rgba(42, 18, 16, 0.28);
+  text-shadow: 0 1px 0 rgba(90, 18, 12, 0.35);
+}
+.addBtn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 0 rgba(128, 33, 24, 0.95),
+    0 18px 30px rgba(42, 18, 16, 0.32);
+}
+.addBtn:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 3px 0 rgba(128, 33, 24, 0.95),
+    0 8px 16px rgba(42, 18, 16, 0.24);
+}
 
 .toolbar {
   display: flex;
